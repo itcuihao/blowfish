@@ -24,7 +24,7 @@
     var oid_likes = "likes_{{ .File.Path }}"
   </script>
   {{ $jsPage := resources.Get "js/page.js" }}
-  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
+  {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha256" }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
   </header>
   <section class="{{ if $toc -}}

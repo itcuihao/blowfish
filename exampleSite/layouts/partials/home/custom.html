@@ -1,4 +1,4 @@
-{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint "sha256" }}
 <div id="background">
   {{ partial "partials/home/background.html" . }}
 </div>
